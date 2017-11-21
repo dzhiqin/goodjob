@@ -1,0 +1,45 @@
+<h3>公司介绍</h3>
+<p>
+  <%=@job.description%>
+  <br>
+  官网：<%=@job.official_website%>
+</p>
+<h3>招聘职位</h3>
+<%=@job.title%>
+<h3>岗位要求</h3>
+<p>
+<%=@job.skill_requirement%>
+</p>
+<h3>福利待遇</h3>
+薪资： <%=@job.wage_lower_bound%> ~ <%=@job.wage_upper_bound%>
+<br>
+<%=@job.remuneration%>
+<h3>工作地点</h3>
+<%=@job.work_location%>
+<h3 >招聘人数</h3>
+<%=@job.number_of_hiring%>
+<h3>联系方式</h3>
+公司地址： <%=@job.company_address%>  <br>
+招聘邮箱：  <%=@job.contact_email%> <br>
+
+
+
+<%= link_to "#",:method=> :get do%>
+<button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">投递简历</button>
+<%end%>
+<div class="modal fade" role="dialog" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <button type="button" class="close" name="button" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div> -->
+      <div class="modal-body">
+        <p>已成功投递简历</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" name="button">close</button>
+      </div>
+    </div>
+  </div>
+</div>
