@@ -1,0 +1,42 @@
+<h1>admin index</h1>
+<table class="table table-bordered">
+  <div class="pull-right">
+    <%=link_to("Add job",new_admin_job_path,:class=>"btn btn-primary")%>
+  </div>
+  <thead>
+    <tr>
+      <th>职位名称</th>
+      <th>公司名称</th>
+      <th>接收到简历数量</th>
+      <th>发布时间</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job|%>
+    <tr>
+      <td>
+        <%=render_job_status(job)%>
+        <%=job.title%>
+      </td>
+      <td><%=job.company_name%></td>
+      <td>
+        <%=link_to "/" do%>
+
+        <%end%>
+      </td>
+      <td><%=job.created_at.strftime('%F')%></td>
+      <td>
+       <%=link_to("Edit",edit_admin_job_path(job),class:"btn btn-primary btn-xs")%>
+       <%=link_to("Delete",admin_job_path(job),:method=> :delete,class:"btn btn-xs  btn-danger")%>
+       <%if job.is_hidden%>
+         <%=link_to("Publish",publish_admin_job_path(job),class:"btn btn-default btn-xs",method: :post)%>
+       <%else%>
+         <%=link_to("Hide",hide_admin_job_path(job),class:"btn btn-default  btn-xs",method: :post)%>
+       <%end%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>

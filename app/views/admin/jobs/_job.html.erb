@@ -1,0 +1,68 @@
+<% if @job.errors.any? %>
+  <ul>
+    <%@job.errors.full_messages.each do |error|%>
+      <li><%=error%></li>
+    <%end%>
+  </ul>
+<%end%>
+<%=simple_form_for [:admin,@job] do |f|%>
+<h1>公司信息</h1>
+<div class="form-group">
+  <%=f.label :company_name,"公司名称"%>
+  <%=f.text_field :company_name,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :description,"公司简介"%>
+  <%=f.text_area :description,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :official_website,"公司官网"%>
+  <%=f.text_field :official_website,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :company_address,"公司地址"%>
+  <%=f.text_field :company_address,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :contact_email,"联系人邮箱"%>
+  <%=f.text_field :contact_email,:class=>"form-control"%>
+</div>
+<br>
+<hr>
+<h1>职位信息</h1>
+<div class="form-group">
+  <%=f.label :title ,"职位名称"%>
+  <%=f.text_field :title,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :skill_requirement ,"职位要求"%>
+  <%=f.text_area :skill_requirement,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :wage_lower_bound,"最低薪资"%>
+  <%=f.text_field :wage_lower_bound,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :wage_upper_bound,"最高薪资"%>
+  <%=f.text_field :wage_upper_bound,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :remuneration,"福利待遇"%>
+  <%=f.text_area :remuneration,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :work_location ,"工作地点"%>
+  <%=f.text_field :work_location,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.label :number_of_hiring ,"招聘人数"%>
+  <%=f.text_field :number_of_hiring,:class=>"form-control"%>
+</div>
+<div class="form-group">
+  <%=f.input :is_hidden%>
+</div>
+<div class="form-group">
+  <%=f.submit "确定提交",:class=>"form-control btn btn-primary"%>
+</div>
+
+<%end%>
