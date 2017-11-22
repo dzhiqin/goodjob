@@ -1,0 +1,21 @@
+<h1>应聘者信息</h1>
+<h3>姓名</h3>
+<p><%=@resume.user.user_profile.name%></p>
+<h3>出生年月</h3>
+<p><%=@resume.user.user_profile.birthday%></p>
+<h3>简介</h3>
+<p><%=@resume.user.user_profile.introduction%></p>
+<h3>联系电话</h3>
+<p><%=@resume.user.user_profile.phone%></p>
+<h3>电子邮箱</h3>
+<p><%=@resume.user.user_profile.email%></p>
+<h3>个人博客</h3>
+<p><%=@resume.user.user_profile.blog%></p>
+<h3>github</h3>
+<p><%=@resume.user.user_profile.github%></p>
+<% if @resume.user.user_profile.attachment.present? %>
+  <i class="fa fa-paperclip"></i>
+  <%=link_to("下载附件",@resume.user.user_profile.attachment_url,target:"_blank")%>
+<% else %>
+  没有附件
+<% end %>

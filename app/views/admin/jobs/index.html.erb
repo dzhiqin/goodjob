@@ -21,8 +21,8 @@
       </td>
       <td><%=job.company_name%></td>
       <td>
-        <%=link_to "/" do%>
-
+        <%=link_to admin_job_resumes_path(job) do%>
+          <%= job.resumes.size%>
         <%end%>
       </td>
       <td><%=job.created_at.strftime('%F')%></td>
