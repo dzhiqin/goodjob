@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!,only:[:apply]
   def index
-    @jobs=Job.where(:is_hidden=> false)
+    @jobs=Job.where(:is_hidden=> false).recent
   end
   def show
     @job=Job.find(params[:id])
