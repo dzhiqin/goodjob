@@ -10,6 +10,11 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :jobs
+  resources :jobs do
+    resources :resumes
+    member do
+      post :apply
+    end
+  end
   resource :user_profile
 end

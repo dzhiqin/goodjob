@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :user_profile
+  has_many :resumes
+  has_many :applied_jobs ,through: :resumes,source: :job
   def admin?
     self.is_admin
   end

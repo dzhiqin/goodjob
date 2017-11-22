@@ -24,22 +24,31 @@
 
 
 
-<%= link_to "#",:method=> :get do%>
+
 <button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">投递简历</button>
-<%end%>
+
 <div class="modal fade" role="dialog" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <!-- <div class="modal-header">
+      <div class="modal-header">
         <button type="button" class="close" name="button" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Modal Header</h4>
-      </div> -->
-      <div class="modal-body">
-        <p>已成功投递简历</p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-body row">
+        <div class="col-md-6">
+          <%=link_to edit_user_profile_path do%>
+          <button class="btn btn-primary form-control"type="button" name="button">重新编辑简历</button>
+          <%end%>
+        </div>
+        <div class="col-md-6">
+          <%=link_to apply_job_path(@job),:method=> :post do%>
+          <button class="btn btn-success form-control"type="button" name="button">投递我的简历</button>
+          <%end%>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" name="button">close</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
