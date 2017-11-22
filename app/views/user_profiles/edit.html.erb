@@ -29,7 +29,12 @@
     <%=f.text_field :github,:class=>"form-control"%>
   </div>
   <div class="form-group">
-    <%=f.input :attachment ,:label=>"添加附件"%>
+
+    <%=f.input :attachment ,:label=>"添加简历"%>
+    <% if @user_profile.attachment.present? %>
+      <i class="fa fa-eye"></i>
+      <%= link_to("预览",@user_profile.attachment_url,target:"_blank")%>
+    <% end %>
   </div>
   <div class="form-group">
     <%=f.submit "提交",class:"btn btn-primary "%>

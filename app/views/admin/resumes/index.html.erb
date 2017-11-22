@@ -1,7 +1,9 @@
 <h1>resume index</h1>
+<%= form_tag bulk_update_admin_job_resumes_path,:class=>"form-inline" do%>
 <table class="table table-bordered">
   <thead>
     <tr>
+      <th><%= check_box_tag "全选","1",false,:id=>"toggle_all"%> 全选</th>
       <th>应聘者</th>
       <th>投简历时间</th>
       <th>操作</th>
@@ -11,6 +13,7 @@
   <tbody>
     <% @resumes.each do |resume|%>
       <tr>
+        <th><%=check_box_tag "ids[]",resume.id %></th>
         <td>
           <%= link_to admin_job_resume_path(@job,resume) do%>
             <%=resume.user.user_profile.name%>
@@ -22,3 +25,14 @@
     <% end %>
   </tbody>
 </table>
+<p><%=submit_tag "批次删除",:class=>"btn btn-danger",:data=>{:confirm=>"Are you sure?"}%></p>
+<% end %>
+<script type="text/javascript">
+  $("#toggle_all").click(function(){
+    if ($(this).prop("checked")){
+      $("input[name='ids[]'").prop("checked",true)
+    }else{
+      $("input[name='ids[]']").prop("checked",false)
+    }
+  });
+</script>
