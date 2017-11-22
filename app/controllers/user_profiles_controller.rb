@@ -1,4 +1,5 @@
 class UserProfilesController < ApplicationController
+  before_action :authenticate_user!
   def edit
     @user_profile=current_user.user_profile
   end
