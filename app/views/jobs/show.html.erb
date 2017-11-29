@@ -1,3 +1,11 @@
+<h3>公司名称</h3>
+<p><%=@job.company_name%></p>
+<h3>logo</h3>
+<%if @job.logo.present?%>
+  <%=image_tag(@job.logo.thumb.url)%>
+<% end %>
+<h3>slogan</h3>
+<p><%=@job.slogan%></p>
 <h3>公司介绍</h3>
 <p>
   <%=@job.description%>

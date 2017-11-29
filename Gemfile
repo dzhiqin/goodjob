@@ -41,6 +41,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'pry'
 gem 'devise-i18n'
+gem 'mini_magick'
 group :production do
   gem 'pg'
 end

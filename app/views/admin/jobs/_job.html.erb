@@ -12,6 +12,15 @@
   <%=f.text_field :company_name,:class=>"form-control"%>
 </div>
 <div class="form-group">
+  <%=f.label :logo,"公司logo"%>
+  <%=f.input :logo,as: :file%>
+</div>
+<div class="form-group">
+  <%=f.label :slogan,"公司口号"%>
+  <%=f.text_field :slogan,:class=>"form-control",:placeholder=>"一句话介绍公司"%>
+</div>
+
+<div class="form-group">
   <%=f.label :description,"公司简介"%>
   <%=f.text_area :description,:class=>"form-control"%>
 </div>

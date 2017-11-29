@@ -16,3 +16,88 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+.navbar {
+  margin-bottom: 0px;
+}
+.jumbotron {
+  // background-image: url("http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png");
+  background-image: image_url("business-team.jpg");
+  //background-image: image_url("medium_1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+
+}
+.jumbotron h1 {
+  color: white;
+}
+.title {
+  font-family: "Helvetica Neue","Microsoft Yahei",微软雅黑;
+  text-align: center;
+  background-color: blue;
+  color: white;
+  margin-top: 200px;
+  margin-bottom: 80px;
+}
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: blue;
+  color: white;
+}
+.show-item {
+  text-align: center;
+  overflow: hidden;//让超出部分隐藏起来
+  color: #fff;
+  background-color: rgba(186,232,2,0.7);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+
+}
+.show-item:hover {
+  opacity: 1;
+}
+.show-item hr {
+  height: 20px;
+  width: 0;
+  background-color: #fff;
+
+}
+.show-item:hover hr{
+  width: 80%;
+  height: 5px;
+  -webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.show-item a {
+  color: #fff;
+  padding: 2px;
+  border: 2px solid #fff;
+}
+.show-item a:hover{
+  color: #aaa;
+  background-color: #fff;
+}
+
+.show-contain{
+  background-image: image_url("medium_2.png");
+  background-size: contain;//让图片全显示
+  background-repeat: no-repeat;
+  background-position: center;
+  //border: 5px solid #d9d9d9;
+  padding: 3px;
+  float: left;
+}
