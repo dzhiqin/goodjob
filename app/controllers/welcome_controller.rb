@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
   before_action :generate_user_profile!
   def index
-
+    @jobs=Job.limit(12)
+    
   end
   private
   def generate_user_profile!

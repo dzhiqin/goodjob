@@ -1,3 +1,13 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
+ blockquote,th,td {margin:0;padding:0;}
+ table {border-collapse:collapse;border-spacing:0;}
+ fieldset,img {border:0}
+ address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ ol,ul {list-style:none}
+ caption,th {text-align:left}
+ h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal}
+ q:before,q:after {content:''}
+ abbr,acronym { border:0}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -52,52 +62,104 @@
   background-color: blue;
   color: white;
 }
-.show-item {
-  text-align: center;
-  overflow: hidden;//让超出部分隐藏起来
-  color: #fff;
-  background-color: rgba(186,232,2,0.7);
-  opacity: 0;
-  -webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
 
+// 以下是navi-bar
+.navi-bar {
+  position: relative;
+  top: 35px;
 }
-.show-item:hover {
-  opacity: 1;
-}
-.show-item hr {
+.navi-bar .ui-strip{
+  width: 5px;
   height: 20px;
-  width: 0;
-  background-color: #fff;
+  background-color: #60c99b;
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
+  top: 4px;
+}
+.navi-bar p {
+  color: #777;
+  font-size: 2rem;
+}
+.navi-bar .navi-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(40, 40, 40, 0.2);
+  color: #009933;
+  position: absolute;
+  bottom: 0px;
+  left: -3px;
+}
+.navi-bar .navi-more a {
+  // float: right;
+  text-decoration: underline;
+  position: relative;
+  top: 8px;
+  z-index: 88;
+  color: rgba(9,9,9,0.4);
+}
+.navi-bar-1 {
+  position: relative;
+  // top: -35px;
+}
+.navi-bar-item {
+  margin-bottom: 17px;
+}
+
+// 以下是推荐公司企业专区
+.wel-cp {
+  margin-top: 90px;
+}
+.da-thumbs {
 
 }
-.show-item:hover hr{
-  width: 80%;
-  height: 5px;
-  -webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
-
-.show-item a {
-  color: #fff;
+.da-thumbs #hahali {
+  background: #fff;
   padding: 2px;
-  border: 2px solid #fff;
+  position: relative;
+  // position: absolute;
 }
-.show-item a:hover{
-  color: #aaa;
-  background-color: #fff;
+.da-thumbs  a,
+.da-thumbs img {
+	display: block;
+	width: 100%;
+	position: relative;
+	border: 2px solid #e8e8e8;
 }
+.da-thumbs  a {
+	overflow: hidden;
+}
+.da-thumbs #hahadiv h4 {
 
-.show-contain{
-  background-image: image_url("medium_2.png");
-  background-size: contain;//让图片全显示
-  background-repeat: no-repeat;
-  background-position: center;
-  //border: 5px solid #d9d9d9;
-  padding: 3px;
-  float: left;
+  font-size: 3rem;
+	color: rgba(255,255,255,0.9);
+	margin-top: 15px;
+}
+.da-thumbs .wel-cp-btn {
+  /*position: absolute;*/
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  color: green;
+  background-color: #fff;
+
+}
+.da-thumbs  #hahadiv {
+	position: absolute;
+	// background: linear-gradient(0deg,rgba(0,185,90,.65),#00b95a);
+	// transition: all 300ms ease;
+	width: 100%;
+	height: 100%;
+}
+.da-thumbs  span {
+	display: block;
+  font-size: 1.6rem;
+  height: 70px;
+	margin: 10px 10px 10px 10px;
+	text-transform: uppercase;
+	font-weight: normal;
+	color: rgba(255,255,255,0.9);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	/*box-shadow: 0 1px 0 rgba(0,0,0,0.1), 0 -10px 0 rgba(255,255,255,0.3);*/
 }
