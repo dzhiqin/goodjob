@@ -17,4 +17,5 @@
 //= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require bootstrap/carousel
+//= require bootstrap-sprockets
 //= require_tree .

@@ -1,20 +1,20 @@
-<div class="jumbotron">
+<div class="jumbotron wel-background">
   <h1 class="title">优职网</h1>
   <p class="slogan">优职网——为你提供优质的工作机会</p>
   <p class="lead">
     <%= link_to("start",jobs_path,:class=>"btn btn-primary")%>
   </p>
 </div>
-<!-- 以下是推荐名企职位 -->
+<!-- 以下是推荐名企 -->
 
 <% if @jobs.count != 0 %>
-<div class="container">
+<div class="container" id="section1">
   <div class="row">
     <div class="navi-bar">
       <div class="row navi-bar-item">
         <div class="col-sm-4 navi-bar-1">
           <p>
-            <span class="ui-strip"></span>推荐名企职位：<i class="fa fa-arrow-circle-down" aria-hidden="true"></i>（点击图标）
+            <span class="ui-strip"></span>推荐名企：<i class="fa fa-arrow-circle-down" aria-hidden="true"></i>（点击图标）
           </p>
         </div>
         <div class="col-sm-1 col-sm-offset-7 navi-more"><%= link_to("更多>>", jobs_path) %></div>
@@ -102,7 +102,7 @@
 
 <!-- 以下是最近简历 -->
 <% if @jobs.count != 0 %>
-<div class="container">
+<div class="container" id="section2">
   <div class="row">
     <div class="navi-bar">
       <div class="row navi-bar-item">

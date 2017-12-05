@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -8,8 +8,10 @@
       </button>
       <a class="navbar-brand" href='/'>优职网</a>
     </div>
-    <div class="collapse navbar-collapse" id="my_navbar">
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#section1">推荐名企</a></li>
+        <li><a href="#section2">热门职位</a></li>
         <% if !current_user %>
 
           <li><%=link_to('注册',new_user_registration_path)%></li>

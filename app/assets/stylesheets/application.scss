@@ -29,16 +29,22 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 .navbar {
   margin-bottom: 0px;
 }
-.jumbotron {
-  // background-image: url("http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png");
-  background-image: image_url("business-team.jpg");
-  //background-image: image_url("medium_1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 110px;
-
+@media (min-width:768px){
+  .navbar{
+    border-radius: 0;
+  }
 }
-.jumbotron h1 {
+.wel-background {
+
+  background-image: image_url("business-team.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding-bottom: 110px;
+}
+.container-fluid .jumbotron{
+  border-radius: 0;
+}
+.wel-background h1 {
   color: white;
 }
 .title {
@@ -230,6 +236,14 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
   color: #fff;
   padding: 10px;
 }
-.sign-up-contain h4{
+// 以下是footer部分
+.footer-content{
+  background-color: #783f04;
 
+}
+.footer-content p{
+  margin: 0;
+}
+.footer-content .breadcrumb{
+  background-color: #783f04;
 }
