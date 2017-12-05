@@ -1,9 +1,12 @@
-<div class="jumbotron wel-background">
-  <h1 class="title">优职网</h1>
-  <p class="slogan">优职网——为你提供优质的工作机会</p>
-  <p class="lead">
-    <%= link_to("start",jobs_path,:class=>"btn btn-primary")%>
-  </p>
+<div class="jumbotron wel-container">
+  <div class="wel-content">
+    <h1 class="title wow fadeInDown" data-wow-duration="1s">优职网</h1>
+    <p class="slogan wow fadeIn" data-wow-duration="1.5s">优职网——为你提供优质的工作机会</p>
+    <p class="lead wow fadeInUp" data-wow-duration="1s">
+      <%= link_to("立即浏览",jobs_path,:class=>"btn btn-primary")%>
+    </p>
+  </div>
+
 </div>
 <!-- 以下是推荐名企 -->
 
@@ -142,7 +145,7 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :email, required: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
         </div>

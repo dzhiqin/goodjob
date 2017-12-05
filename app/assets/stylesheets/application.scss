@@ -26,6 +26,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
 .navbar {
   margin-bottom: 0px;
 }
@@ -34,25 +35,36 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
     border-radius: 0;
   }
 }
-.wel-background {
+.wel-container {
 
   background-image: image_url("business-team.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   padding-bottom: 110px;
+  height: 600px;
+}
+.wel-container h1{
+  font-family: 'Arbutus', cursive;
+    text-align:center;
+    font-size:80px;
+    color:#F8CA4D;
+    text-shadow:0px 0px 4px #222;
+}
+
+.wel-content {
+  margin-top: 180px;
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  border-radius: 5px;
+  padding: 10px;
 }
 .container-fluid .jumbotron{
   border-radius: 0;
 }
-.wel-background h1 {
-  color: white;
-}
+
 .title {
   font-family: "Helvetica Neue","Microsoft Yahei",微软雅黑;
   text-align: center;
-  background-color: blue;
   color: white;
-  margin-top: 200px;
   margin-bottom: 80px;
 }
 .slogan {
@@ -65,8 +77,12 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 .lead {
   margin-bottom: 60px;
   text-align: center;
-  background-color: blue;
   color: white;
+
+}
+.lead a{
+  padding: 6px 20px;
+  font-size: 20px;
 }
 
 // 以下是navi-bar

@@ -1,78 +1,170 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  body {
-      position: relative;
-  }
-  #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
-  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
-  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
-  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
-  </style>
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+     <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> <!-- thats important for animation effects -->
+       <link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet"> <!-- Demo -->
+    <style media="screen">
+    /* Demo */
+body
+{
+  font-family: 'sans-serif';
+}
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="#section1">Section 1</a></li>
-          <li><a href="#section2">Section 2</a></li>
-          <li><a href="#section3">Section 3</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#section41">Section 4-1</a></li>
-              <li><a href="#section42">Section 4-2</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
+/* Header settings */
+header {
+height:100vh; /* you can change that height to 100%, please get sure youre Header is ready */
+background-attachment:fixed;
+background-size:cover;
+background-position:left;
+background-repeat:no-repeat;
+background-image:linear-gradient(to right, black 0%, white 100%), url('https://static.pexels.com/photos/225600/pexels-photo-225600.jpeg');
+background-blend-mode:screen; /* you can remove that, if you do that delet the "linear-gradient(to right, black 0%, white 100%)," */
+}
 
-<div id="section1" class="container-fluid">
-  <h1>Section 1</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section3" class="container-fluid">
-  <h1>Section 3</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section41" class="container-fluid">
-  <h1>Section 4 Submenu 1</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section42" class="container-fluid">
-  <h1>Section 4 Submenu 2</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
+@media (max-width:767px){
+header {
+background-attachment:inherit;
+}
+}
 
-</body>
+header .row
+{
+  margin-top:40vh; /* Handle the row */
+}
+
+@media (max-width:767px){
+  header .row
+{
+  margin-top:30vh; /* Handle the row on mobile */
+}
+}
+
+header h1
+{
+  font-family: 'Arbutus', cursive;
+  text-align:center;
+  font-size:61px;
+  color:#F8CA4D;
+  text-shadow:0px 0px 4px #222;
+}
+
+@media (max-width:767px){
+  header h1
+{
+  font-size:41px;
+}
+}
+
+header p
+{
+  text-align:center;
+  font-size:21px;
+}
+
+header .btn-link
+{
+  border:1px solid #2F3440;
+  margin-top:20px;
+  font-size:21px;
+  letter-spacing:1px;
+  color:#2F3440;
+  text-shadow:0px 0px 1px #222;
+  box-shadow:0px 0px 1px #000;
+}
+
+header .btn-link:hover
+{
+  text-decoration:none;
+  color:#eee;
+  border:1px solid #eee;
+  transition:all 0.7s;
+  text-shadow:0px 0px 3px #000;
+}
+
+
+/* Custom navbar settings */
+.navbar-default {
+background-color:#3F5666;
+border-color:#2F3440;
+border-bottom:1px solidÂ #00c9c0;
+border-radius:0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+color:#fff;
+letter-spacing:1px;
+font-weight:500;
+}
+
+.navbar-default .navbar-brand {
+color:#ffffff;
+letter-spacing:1px;
+}
+
+.navbar-default .navbar-brand:hover {
+color:#eee;
+transition:all 0.7s;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+color:#eee;
+background-color:#2F3440;
+transition:all 0.7s;
+font-size:21px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+color:#eee;
+background-color:#2F3440;
+transition:all 0.7s;
+font-size:15px;
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+       <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="2600" data-aos-once="true" >
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Dize Design AOS-Header v.2</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="#">Home </a></li>
+                        <li role="presentation"><a href="#">Project </a></li>
+                        <li role="presentation"><a href="#">About Us</a></li>
+                        <li role="presentation"><a href="#">Contact </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" data-aos="fade-left" data-aos-duration="2600" data-aos-once="true" >
+                    <h1>Lorem Ipsum</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                </div>
+                <div class="col-md-12" data-aos="fade-right" data-aos-duration="2600" data-aos-once="true" ><center>
+                    <a class="btn btn-link" href="#">
+                        Lorem Ipsum
+                    </a>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+</header>
+  </body>
 </html>
+<script src="bower_components/aos/dist/aos.js">
+$(document).ready(function(){
+AOS.init({ disable: 'mobile' });
+});
+
+/* For mobile support, delet the 'mobile' */
+</script> <!-- Important for animation -->

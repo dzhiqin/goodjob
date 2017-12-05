@@ -18,4 +18,5 @@
 //= require bootstrap/modal
 //= require bootstrap/carousel
 //= require bootstrap-sprockets
+//= require wow.min
 //= require_tree .
