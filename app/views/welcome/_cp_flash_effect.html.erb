@@ -1,21 +1,13 @@
 <div id="da-thumbs" class="da-thumbs">
   <% @jobs.limit(12).each do |job| %>
-  <div id="hahali" class="col-xs-2">
+
+  <div id="hahali" class="col-xs-2 show-item">
     <%= link_to job_path(job) do %>
     <% if job.logo.present? %>
-      <%= image_tag(job.logo.thumb.url, class: "img-responsive") %>
-    <% else %>
-      <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+    <%= image_tag(job.logo.thumb.url, class: "img-responsive") %>
+  <% else %>
+    <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
     <% end %>
-    <div id="hahadiv">
-      <h4><%= job.company_name %></h4>
-      <div class="line"></div>
-      <span><%= job.slogan %></span>
-      <div class="wel-cp-btn text-center">
-        立即查看
-      </div>
-
-    </div>
     <% end %>
   </div>
   <% end %>

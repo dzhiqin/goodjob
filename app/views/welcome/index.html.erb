@@ -21,14 +21,86 @@
         <div class="navi-line"></div>
       </div>
     </div>
+
     <div class="wel-cp">
-      <%= render "cp_flash_effect" %>
+      <%=render "hot_job_2"%>
     </div>
+
+    <!-- 以下是carousel部分 -->
+    <div class="" style="margin-top:50px;">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <!-- 这里是图片下方的小圆点，用于指示当前在哪个页面，也可以跳转 -->
+        <ol class="carousel-indicators">
+
+          <li data-target="#myCarousel" data-slide-to="0" class="active">
+            <img class="img-responsive " src="<%=@jobs.first.logo.thumb.url%>" alt="图片不存在"></li>
+          <li data-target="#myCarousel" data-slide-to="1">
+            <img class="img-responsive " src="<%=@jobs.second.logo.thumb.url%>" alt="图片不存在"></li>
+          <li data-target="#myCarousel" data-slide-to="2">
+            <img class="img-responsive " src="<%=@jobs.third.logo.thumb.url%>" alt="图片不存在"></li>
+
+        </ol>
+
+
+        <!-- Carousel Slides / Quotes -->
+        <div class="carousel-inner text-center">
+
+             <!-- Quote 1 -->
+             <div class="item active">
+                 <blockquote>
+                     <div class="row">
+                         <div class="col-sm-8 col-sm-offset-2">
+
+                             <p><%=@jobs.first.description%></p>
+
+                         </div>
+                     </div>
+                 </blockquote>
+             </div>
+             <!-- Quote 2 -->
+             <div class="item">
+                 <blockquote>
+                     <div class="row">
+                         <div class="col-sm-8 col-sm-offset-2">
+
+                             <p><%=@jobs.second.description%> </p>
+
+                         </div>
+                     </div>
+                 </blockquote>
+             </div>
+             <!-- Quote 3 -->
+             <div class="item">
+                 <blockquote>
+                     <div class="row">
+                         <div class="col-sm-8 col-sm-offset-2">
+
+                             <p><%=@jobs.third.description%></p>
+
+                         </div>
+                     </div>
+                 </blockquote>
+             </div>
+         </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
 <% end %>
 
-<!-- 以下是热门职位 -->
+<!-- 以下是最近简历 -->
 <% if @jobs.count != 0 %>
 <div class="container">
   <div class="row">
@@ -43,10 +115,43 @@
         <div class="navi-line"></div>
       </div>
     </div>
-    <% @jobs.each do |job|%>
-      <%= render "jobs/job_message",:job=> job %>
-    <% end %>
-
+    <div class="wel-cp">
+      <table class="table">
+        <%@jobs.each do |job|%>
+          <tr>
+            <td>
+              <%=link_to job_path(job) do%>
+                [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
+              <% end %>
+              </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>
 <% end %>
+<!-- 以下是注册部分 -->
+<div class="jumbotrun">
+  <div class="col-md-12">
+  <div class="row sign-up-contain">
+    <div class="col-md-4 col-md-offset-4 eidt-registration-page">
+      <h2>马上注册</h2>
+
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "注册" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

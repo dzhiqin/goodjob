@@ -1,11 +1,15 @@
 <div class="panel panel-default">
 
   <div class="panel-body">
-    <%=link_to job_path(job) do%>
-      [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
-    <%end%>
+    <div class="col-md-6">
+      <h4><%=job.company_name%></h4>
+      <p><%=job.slogan%></p>
+    </div>
+    <div class="col-md-6">
+      <%=link_to job_path(job) do%>
+        [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
+      <%end%>
+    </div>
   </div>
-  <div class="panel-footer">
-    <%= render_passed_days(job) %>
-  </div>
+  <%= render_passed_days(job) %>
 </div>

@@ -107,59 +107,129 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 }
 
 // 以下是推荐公司企业专区
+.show-contain{
+
+  padding: 3px;
+}
 .wel-cp {
   margin-top: 90px;
 }
-.da-thumbs {
-
+.job-contain{
+  height: 200px;
+  padding: 3px;
 }
-.da-thumbs #hahali {
-  background: #fff;
-  padding: 2px;
+.job-content{
   position: relative;
-  // position: absolute;
-}
-.da-thumbs  a,
-.da-thumbs img {
-	display: block;
-	width: 100%;
-	position: relative;
-	border: 2px solid #e8e8e8;
-}
-.da-thumbs  a {
-	overflow: hidden;
-}
-.da-thumbs #hahadiv h4 {
-
-  font-size: 3rem;
-	color: rgba(255,255,255,0.9);
-	margin-top: 15px;
-}
-.da-thumbs .wel-cp-btn {
-  /*position: absolute;*/
-  width: 90%;
-  margin: 0 auto;
-  font-size: 1.8rem;
-  color: green;
-  background-color: #fff;
+  background-color: #783f04;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 10px;;
+  height: 0;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+  transition: 0.5s;
 
 }
-.da-thumbs  #hahadiv {
-	position: absolute;
-	// background: linear-gradient(0deg,rgba(0,185,90,.65),#00b95a);
-	// transition: all 300ms ease;
-	width: 100%;
-	height: 100%;
+.job-content h4{
+  margin: 20px;
 }
-.da-thumbs  span {
-	display: block;
-  font-size: 1.6rem;
-  height: 70px;
-	margin: 10px 10px 10px 10px;
-	text-transform: uppercase;
-	font-weight: normal;
-	color: rgba(255,255,255,0.9);
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-	border-bottom: 1px solid rgba(255,255,255,0.5);
-	/*box-shadow: 0 1px 0 rgba(0,0,0,0.1), 0 -10px 0 rgba(255,255,255,0.3);*/
+.job-content a{
+  border: 2px solid #fff;
+  padding: 3px 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.job-content a:hover {
+  background-color: white;
+  color: black;
+}
+.job-contain:hover .job-content{
+  top:-100%;
+  height: 100%;
+}
+
+.job-contain img{
+  width: 100%;
+  height: 100%;
+  border: 2px solid #d8d8d8;
+}
+
+
+
+
+// 以下是carousel部分
+.carousel-inner {
+    min-height: 300px;
+
+}
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+.item blockquote p:before {
+    // content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+#myCarousel {
+    padding: 0 10px 30px 10px;
+    margin-top: 30px;
+    /* Control buttons  */
+    /* Previous button  */
+    /* Next button  */
+    /* Changes the position of the indicators */
+    /* Changes the color of the indicators */
+}
+#myCarousel .carousel-control {
+    background: none;
+    color: #CACACA;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+}
+#myCarousel .carousel-control.left {
+    left: -60px;
+}
+#myCarousel .carousel-control.right {
+    right: -60px;
+}
+#myCarousel .carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+#myCarousel .carousel-indicators li {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    border: 4px solid #CCC;
+    border-radius: 50px;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+#myCarousel .carousel-indicators .active {
+    background: #333333;
+    width: 128px;
+    height: 128px;
+    border-radius: 100px;
+    border-color: #f33;
+    opacity: 1;
+    overflow: hidden;
+}
+// 以下是首页注册部分
+.sign-up-contain {
+  text-align: center;
+  background-color:#783f04;
+  color: #fff;
+  padding: 10px;
+}
+.sign-up-contain h4{
+
 }
