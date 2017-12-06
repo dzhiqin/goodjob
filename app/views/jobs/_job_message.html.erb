@@ -1,15 +1,24 @@
-<div class="panel panel-default">
 
-  <div class="panel-body">
+<div class="media wow fadeInLeft jobs-media" data-wow-duration="1s" >
+  <div class="media-left wow flipInY" data-wow-delay="1s">
+    <%=image_tag(job.logo.thumb.url,class:"media-object img-circle" )%>
+  </div>
+  <div class="media-body">
     <div class="col-md-6">
-      <h4><%=job.company_name%></h4>
-      <p><%=job.slogan%></p>
+      <h4 class="media-heading"><%=job.company_name%></h4>
+      <p>
+        <%=link_to job_path(job) do%>
+          [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
+        <%end%>
+      </p>
     </div>
     <div class="col-md-6">
-      <%=link_to job_path(job) do%>
-        [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
-      <%end%>
+      <h5>基本要求:</h5>
+      <p>
+        <%=link_to job_path(job) do%>
+          <%=job.skill_requirement%>
+        <% end %>
+      </p>
     </div>
   </div>
-  <%= render_passed_days(job) %>
 </div>

@@ -1,6 +1,6 @@
 
 <div class="row" style="margin:30px 15px 30px;">
-  <% @jobs.each do |job|%>
+  <% @jobs.limit(12).each do |job|%>
   <div class="col-sm-2 col-xl-2 col-xs-4 job-contain" >
     <%=image_tag(job.logo.thumb.url,class:"img-responsive")%>
     <div class="job-content">

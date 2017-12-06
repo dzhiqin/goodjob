@@ -1,170 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-     <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> <!-- thats important for animation effects -->
-       <link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet"> <!-- Demo -->
-    <style media="screen">
-    /* Demo */
-body
-{
-  font-family: 'sans-serif';
-}
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <title>进度条</title>
+<style>
+    .progress{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 20px;
+        background: #f5f5f5;
+        border-bottom: 1px solid #ddd;
+    }
 
-/* Header settings */
-header {
-height:100vh; /* you can change that height to 100%, please get sure youre Header is ready */
-background-attachment:fixed;
-background-size:cover;
-background-position:left;
-background-repeat:no-repeat;
-background-image:linear-gradient(to right, black 0%, white 100%), url('https://static.pexels.com/photos/225600/pexels-photo-225600.jpeg');
-background-blend-mode:screen; /* you can remove that, if you do that delet the "linear-gradient(to right, black 0%, white 100%)," */
-}
+    .progress-inner{
+        width: 1%;
+        background: #d43f3a;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+</style>
+</head>
+<body ontouchstart="">
 
-@media (max-width:767px){
-header {
-background-attachment:inherit;
-}
-}
+<div class="progress">
+    <div class="progress-inner" id="progress"></div>
+</div>
 
-header .row
-{
-  margin-top:40vh; /* Handle the row */
-}
+<script>
+    (function () {
+        // 获取进度条 div
+        var $progress = document.getElementById('progress');
 
-@media (max-width:767px){
-  header .row
-{
-  margin-top:30vh; /* Handle the row on mobile */
-}
-}
+        // 初始进度，1%
+        var progress = 1;
 
-header h1
-{
-  font-family: 'Arbutus', cursive;
-  text-align:center;
-  font-size:61px;
-  color:#F8CA4D;
-  text-shadow:0px 0px 4px #222;
-}
+        // 生成随机数
+        var random = function(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
 
-@media (max-width:767px){
-  header h1
-{
-  font-size:41px;
-}
-}
+        // 跑进度
+        var onprogress = function () {
+            // 随机时间
+            var timeout = random(10, 30);
 
-header p
-{
-  text-align:center;
-  font-size:21px;
-}
+            setTimeout(function () {
+                // 如果页面加载完毕，则直接进度到 100%
+                if(window.loaded){
+                    $progress.style.width = '100%';
+                    return;
+                }
 
-header .btn-link
-{
-  border:1px solid #2F3440;
-  margin-top:20px;
-  font-size:21px;
-  letter-spacing:1px;
-  color:#2F3440;
-  text-shadow:0px 0px 1px #222;
-  box-shadow:0px 0px 1px #000;
-}
+                // 随机进度
+                progress += random(1, 5);
 
-header .btn-link:hover
-{
-  text-decoration:none;
-  color:#eee;
-  border:1px solid #eee;
-  transition:all 0.7s;
-  text-shadow:0px 0px 3px #000;
-}
+                // 随机进度不能超过 98%，以免页面还没加载完毕，进度已经 100% 了
+                if(progress > 98){
+                    progress = 98;
+                }
 
+                $progress.style.width = progress + '%';
+                onprogress();
+            }, timeout);
+        };
 
-/* Custom navbar settings */
-.navbar-default {
-background-color:#3F5666;
-border-color:#2F3440;
-border-bottom:1px solidÂ #00c9c0;
-border-radius:0px;
-}
+        // 开始跑进度
+        onprogress();
 
-.navbar-default .navbar-nav > li > a {
-color:#fff;
-letter-spacing:1px;
-font-weight:500;
-}
+        window.onload = function(){
+            window.loaded = true;
+        };
+    })();
+</script>
 
-.navbar-default .navbar-brand {
-color:#ffffff;
-letter-spacing:1px;
-}
+<iframe src="http://baidu.com/" frameborder="0"></iframe>
+<iframe src="http://163.com/" frameborder="0"></iframe>
+<iframe src="http://qq.com/" frameborder="0"></iframe>
 
-.navbar-default .navbar-brand:hover {
-color:#eee;
-transition:all 0.7s;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-color:#eee;
-background-color:#2F3440;
-transition:all 0.7s;
-font-size:21px;
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-color:#eee;
-background-color:#2F3440;
-transition:all 0.7s;
-font-size:15px;
-}
-
-    </style>
-  </head>
-  <body>
-    <header>
-       <nav class="navbar navbar-default navbar-fixed-top" data-aos="fade-down" data-aos-duration="2600" data-aos-once="true" >
-            <div class="container-fluid">
-                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Dize Design AOS-Header v.2</a>
-                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                </div>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation"><a href="#">Home </a></li>
-                        <li role="presentation"><a href="#">Project </a></li>
-                        <li role="presentation"><a href="#">About Us</a></li>
-                        <li role="presentation"><a href="#">Contact </a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12" data-aos="fade-left" data-aos-duration="2600" data-aos-once="true" >
-                    <h1>Lorem Ipsum</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                </div>
-                <div class="col-md-12" data-aos="fade-right" data-aos-duration="2600" data-aos-once="true" ><center>
-                    <a class="btn btn-link" href="#">
-                        Lorem Ipsum
-                    </a>
-                    </center>
-                </div>
-            </div>
-        </div>
-
-</header>
-  </body>
+</body>
 </html>
-<script src="bower_components/aos/dist/aos.js">
-$(document).ready(function(){
-AOS.init({ disable: 'mobile' });
-});
-
-/* For mobile support, delet the 'mobile' */
-</script> <!-- Important for animation -->

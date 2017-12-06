@@ -248,18 +248,50 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 // 以下是首页注册部分
 .sign-up-contain {
   text-align: center;
-  background-color:#783f04;
+  background-color:#434343;
   color: #fff;
   padding: 10px;
 }
 // 以下是footer部分
 .footer-content{
-  background-color: #783f04;
+  background-color: #101010;
 
 }
 .footer-content p{
   margin: 0;
 }
 .footer-content .breadcrumb{
-  background-color: #783f04;
+  background-color: #101010;
+}
+//以下是职位列表页面
+.jobs-media{
+  border:3px solid rgba(9,9,9,0.4);
+  padding:10px 30px 10px;
+  border-radius:5px;
+  height: 130px;
+}
+.jobs-media img{
+  width:70px;
+  border:2px solid rgba(9,9,9,0.4);
+
+}
+.jobs-media img:hover{
+  width: 85px;
+  transition: 1s;
+}
+.jobs-media .media-left{
+  position: relative;
+  top: 15px;
+}
+.jobs-media .media-heading{
+  margin-top: 16px;
+}
+.jobs-media:hover{
+  box-shadow: 4px 4px 10px #aaf2f2;
+  height: 135px;
+}
+
+.jobs-media p{
+  max-height:60px;
+  overflow:scroll;
 }

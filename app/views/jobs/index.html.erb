@@ -1,3 +1,23 @@
-<% @jobs.each do |job|%>
-  <%= render "job_message",:job=> job %>
+<% if @jobs.count != 0 %>
+<div class="container" >
+  <div class="row">
+    <div class="navi-bar">
+      <div class="row navi-bar-item">
+        <div class="col-sm-4 navi-bar-1">
+          <p>
+            <span class="ui-strip"></span>职位列表<i class="fa fa-arrow-circle-down" aria-hidden="true"></i>（点击图标）
+          </p>
+        </div>
+
+        <div class="navi-line"></div>
+      </div>
+    </div>
+    <div class="wel-cp">
+      <% @jobs.each do |job|%>
+        <%= render "job_message",:job=> job %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <% end %>
+<hr>
