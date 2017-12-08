@@ -29,12 +29,15 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 
 .navbar {
   margin-bottom: 0px;
+  color: white;
+  font-size: 20px;
 }
 @media (min-width:768px){
   .navbar{
     border-radius: 0;
   }
 }
+
 .wel-container {
 
   background-image: image_url("business-team.jpg");
@@ -294,4 +297,33 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 .jobs-media p{
   max-height:60px;
   overflow:scroll;
+}
+// 以下是职位信息
+.job-mes-panel{
+  padding: 10px;
+
+}
+.job-mes-contain{
+  border: 2px solid #00ffff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.job-mes-contain hr{
+  margin-top: 2px;
+
+}
+.side-mes-panel{
+  margin-top: 20px;
+  padding: 20px 0px;
+  background-color: blue;
+  text-align: center;
+}
+.side-mes-panel h1{
+  color: white;
+}
+.side-mes-contain {
+  border: 2px solid blue;
+
+  background-color: white;
+
 }
