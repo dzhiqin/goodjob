@@ -3,7 +3,7 @@ class Admin::JobsController < ApplicationController
   before_action :require_admin
 
   def index
-    @jobs=Job.all
+    @jobs=Job.includes(:resumes).recent
   end
   def new
     @job=Job.new
