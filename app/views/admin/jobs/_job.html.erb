@@ -71,6 +71,12 @@
   <%=f.input :is_hidden%>
 </div>
 <div class="form-group">
+  <%= f.text_field :cp_lat, :id => "maplat", :type => "hidden" %>
+  <%= f.text_field :cp_lng, :id => "maplng", :type => "hidden" %>
+  <%= render "common/baidumap_1" %>
+</div>
+
+<div class="form-group">
   <%=f.submit "确定提交",:class=>"form-control btn btn-primary"%>
 </div>
 

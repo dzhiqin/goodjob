@@ -11,8 +11,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
-          <li><a href="#section1">推荐名企</a></li>
-          <li><a href="#section2">热门职位</a></li>
+          <!-- <li><a href="#section1">推荐名企</a></li>
+          <li><a href="#section2">热门职位</a></li> -->
           <li><%=link_to('注册',new_user_registration_path)%></li>
           <li><%=link_to(content_tag(:i,'登录',class:'fa fa-sign-in'),new_user_session_path)%></li>
         <%else%>

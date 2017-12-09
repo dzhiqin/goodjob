@@ -44,15 +44,18 @@
       <h1>公司信息</h1>
       <div class="side-mes-contain">
         <h3><%=@job.company_name%></h3>
-        <h3>logo</h3>
+        <!-- <h3>logo</h3> -->
         <%if @job.logo.present?%>
           <%=image_tag(@job.logo.thumb.url)%>
         <% end %>
-        <h3>slogan</h3>
+        <!-- <h3>slogan</h3> -->
         <p><%=@job.slogan%></p>
         <a href="<%=@job.official_website%>" target="_blank">
           官网:<%=@job.official_website%>
         </a>
+        <div class="map-contain">
+          <%=render "common/baidumap_2"%>
+        </div>
       </div>
     </div>
   </div>
