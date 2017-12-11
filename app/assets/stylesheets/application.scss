@@ -333,13 +333,17 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
   margin: 10px auto 10px;
 
 }
-
+//以下是devise部分
 .devise-container{
-  background-color: white;
+  background-image: image_url("welcome.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 700px;
 }
 .devise-content{
   margin-top: 30px;
   margin-bottom: 30px;
+  background-color: #aaf2f2;
   border: 5px solid #aaf2f2;
   border-radius: 5px;
   padding: 10px;
