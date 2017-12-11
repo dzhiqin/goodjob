@@ -43,6 +43,7 @@ gem 'pry'
 gem 'devise-i18n'
 gem 'mini_magick'
 gem 'rails-i18n'
+gem 'ckeditor'
 group :production do
   gem 'pg'
 end

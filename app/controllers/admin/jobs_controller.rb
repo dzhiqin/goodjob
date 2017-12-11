@@ -49,7 +49,7 @@ class Admin::JobsController < ApplicationController
   end
   private
   def job_params
-    params.require(:job).permit(:title,:description,:wage_lower_bound,:wage_upper_bound,:contact_email,:official_website,:company_name,:company_address,:skill_requirement,:remuneration,:work_location,:number_of_hiring,:is_hidden,:logo,:slogan)
+    params.require(:job).permit(:title,:description,:wage_lower_bound,:wage_upper_bound,:contact_email,:official_website,:company_name,:company_address,:skill_requirement,:remuneration,:work_location,:number_of_hiring,:is_hidden,:logo,:slogan,:cp_lng,:cp_lat)
   end
 
 end

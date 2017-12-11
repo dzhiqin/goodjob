@@ -19,4 +19,5 @@
 //= require bootstrap/carousel
 //= require bootstrap-sprockets
 //= require wow.min
+//= require ckeditor/init
 //= require_tree .

@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 job-mes-panel">
+      <div class="job-mes-contain">
+        <span>公司介绍</span> <hr>
+        <p>
+          <%=sanitize @job.description%>
+          <br>官网:
+          <a href="<%=@job.official_website%>" target="_blank">
+            <%=@job.official_website%>
+          </a>
+        </p>
+        <span>职位信息</span> <hr>
+
+        <h3>招聘职位</h3>
+        <%=@job.title%>
+        <h3>岗位要求</h3>
+        <p>
+        <%=sanitize @job.skill_requirement%>
+        </p>
+        <h3>福利待遇</h3>
+        薪资： <%= @job.wage_lower_bound%> ~ <%=@job.wage_upper_bound%>
+        <br>
+        <%=sanitize @job.remuneration%>
+        <h3>工作地点</h3>
+        <%=@job.work_location%>
+        <h3 >招聘人数</h3>
+        <%=@job.number_of_hiring%>
+        <h3>联系方式</h3>
+        公司地址： <%=@job.company_address%>  <br>
+        招聘邮箱：  <%=@job.contact_email%> <br>
+        <% if !current_user.admin?%>
+          <button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">投递简历</button>
+        <% end %>
+
+
+      </div>
+
+
+    </div>
+    <div class="col-md-4 side-mes-panel">
+      <h1>公司信息</h1>
+      <div class="side-mes-contain">
+        <h3><%=@job.company_name%></h3>
+        <!-- <h3>logo</h3> -->
+        <%if @job.logo.present?%>
+          <%=image_tag(@job.logo.thumb.url)%>
+        <% end %>
+        <!-- <h3>slogan</h3> -->
+        <p><%=@job.slogan%></p>
+        <a href="<%=@job.official_website%>" target="_blank">
+          <%=@job.official_website%>
+        </a>
+        <div class="map-contain">
+          <%=render "common/baidumap_2"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
