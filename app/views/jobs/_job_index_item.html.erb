@@ -5,19 +5,21 @@
   </div>
   <div class="media-body">
     <div class="col-md-6">
-      <h4 class="media-heading"><%=job.company_name%></h4>
-      <p>
-        <%=link_to job_path(job) do%>
-          [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
-        <%end%>
+      <%=link_to job_path(job) do%>
+      <h4 class="media-heading1"><%=job.company_name%></h4>
+      <p class="media-title">
+        [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
       </p>
+      <%end%>
     </div>
     <div class="col-md-6">
-      <h5>基本要求:</h5>
-      <p>
-        <%=link_to job_path(job) do%>
-          <%=job.skill_requirement%>
-        <% end %>
+      <h4 class="media-heading2">薪资： <%= job.wage_lower_bound%> ~ <%=job.wage_upper_bound%></h4>
+      <p class="p-container">
+        <%if job.slogan.present?%>
+          <%=job.slogan%>
+        <%end%>
+        <br>
+        <%=sanitize job.remuneration%>
       </p>
     </div>
   </div>

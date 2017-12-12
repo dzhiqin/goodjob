@@ -55,7 +55,7 @@
                      <div class="row">
                          <div class="col-sm-8 col-sm-offset-2">
 
-                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).first.description%></p>
+                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).first.description.strip[0...250]%></p>
 
                          </div>
                      </div>
@@ -67,7 +67,7 @@
                      <div class="row">
                          <div class="col-sm-8 col-sm-offset-2">
 
-                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).second.description%> </p>
+                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).second.description.strip[0...250]%> </p>
 
                          </div>
                      </div>
@@ -79,7 +79,7 @@
                      <div class="row">
                          <div class="col-sm-8 col-sm-offset-2">
 
-                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).third.description%></p>
+                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).third.description.strip[0...250]%></p>
 
                          </div>
                      </div>
@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="wel-cp">
-      <table class="table">
+      <table class="table table-hot-jobs">
         <%@jobs.limit(20).each do |job|%>
           <tr>
             <td>

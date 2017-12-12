@@ -3,7 +3,7 @@ class Admin::JobsController < ApplicationController
   before_action :require_admin
 
   def index
-    @jobs=Job.includes(:resumes).recent
+    @jobs=Job.includes(:resumes).recent.paginate(:page=>params[:page],:per_page=>20)
   end
   def new
     @job=Job.new

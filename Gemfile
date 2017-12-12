@@ -44,6 +44,7 @@ gem 'devise-i18n'
 gem 'mini_magick'
 gem 'rails-i18n'
 gem 'ckeditor'
+gem 'will_paginate'
 group :production do
   gem 'pg'
 end

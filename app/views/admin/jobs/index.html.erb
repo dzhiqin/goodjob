@@ -17,7 +17,9 @@
       <tr>
         <td>
           <%=render_job_status(job)%>
-          <%=job.title%>
+          <%=link_to admin_job_path(job) do%>
+            <%=job.title%>
+          <%end%>
         </td>
         <td><%=job.company_name%></td>
         <td>
@@ -40,4 +42,7 @@
     </tbody>
 
   </table>
+  <div class="text-center">
+    <%=will_paginate @jobs %>
+</div>
 </div>

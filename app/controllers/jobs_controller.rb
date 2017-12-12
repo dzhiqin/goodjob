@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!,only:[:apply]
   def index
-    @jobs=Job.where(:is_hidden=> false).recent
+    @jobs=Job.where(:is_hidden=> false).recent.paginate(:page=>params[:page],:per_page=>20)
   end
   def show
     @job=Job.find(params[:id])
