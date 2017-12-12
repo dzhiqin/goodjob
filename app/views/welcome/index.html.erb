@@ -37,11 +37,11 @@
         <ol class="carousel-indicators">
 
           <li data-target="#myCarousel" data-slide-to="0" class="active">
-            <img class="img-responsive " src="<%=@jobs.first.logo.thumb.url%>" alt="图片不存在"></li>
+            <img class="img-responsive " src="<%=@jobs.where(:is_hot=>true).recent.limit(3).first.logo.thumb.url%>" alt="图片不存在"></li>
           <li data-target="#myCarousel" data-slide-to="1">
-            <img class="img-responsive " src="<%=@jobs.second.logo.thumb.url%>" alt="图片不存在"></li>
+            <img class="img-responsive " src="<%=@jobs.where(:is_hot=>true).recent.limit(3).second.logo.thumb.url%>" alt="图片不存在"></li>
           <li data-target="#myCarousel" data-slide-to="2">
-            <img class="img-responsive " src="<%=@jobs.third.logo.thumb.url%>" alt="图片不存在"></li>
+            <img class="img-responsive " src="<%=@jobs.where(:is_hot=>true).recent.limit(3).third.logo.thumb.url%>" alt="图片不存在"></li>
 
         </ol>
 
@@ -55,7 +55,7 @@
                      <div class="row">
                          <div class="col-sm-8 col-sm-offset-2">
 
-                             <p><%=@jobs.first.description%></p>
+                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).first.description%></p>
 
                          </div>
                      </div>
@@ -67,7 +67,7 @@
                      <div class="row">
                          <div class="col-sm-8 col-sm-offset-2">
 
-                             <p><%=@jobs.second.description%> </p>
+                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).second.description%> </p>
 
                          </div>
                      </div>
@@ -79,7 +79,7 @@
                      <div class="row">
                          <div class="col-sm-8 col-sm-offset-2">
 
-                             <p><%=@jobs.third.description%></p>
+                             <p><%= sanitize @jobs.where(:is_hot=>true).recent.limit(3).third.description%></p>
 
                          </div>
                      </div>

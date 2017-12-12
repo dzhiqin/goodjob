@@ -61,7 +61,7 @@
   </div>
   <div class="form-group">
     <%=f.label :skill_requirement ,"职位要求"%>
-    <%=f.text_area :skill_requirement,:class=>"form-control"%>
+    <%=f.cktext_area :skill_requirement,ckeditor:{toolbar:'mini',language:'zh-CN'}%>
   </div>
   <div class="form-group <%=(f.object.errors[:wage_lower_bound].any?)? "has-error":""%>">
     <%=f.label :wage_lower_bound,"最低薪资",:class=>"control-label"%>
@@ -97,6 +97,9 @@
     <% if f.object.errors[:number_of_hiring]%>
       <span class="help-block"><%=safe_join(f.object.errors[:number_of_hiring],"、")%></span>
     <% end %>
+  </div>
+  <div class="form-group">
+    <%=f.input :is_hot%>
   </div>
   <div class="form-group">
     <%=f.input :is_hidden%>
