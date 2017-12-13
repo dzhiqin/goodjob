@@ -1,8 +1,8 @@
 <div class="container">
   <div class="resume">
     <header class="page-header">
-      <h1 class="page-title">Resume of John Doe</h1>
-      <small><i class="fa fa-clock-o"></i>Last updated on:<time>Sunday,October 05 2014</time></small>
+      <h1 class="page-title"><%=@user_profile.name%>的简历</h1>
+      <small><i class="fa fa-clock-o"></i>Last updated on:<time><%=@user_profile.updated_at.strftime('%F %T')%></time></small>
     </header>
     <div class="row">
       <div class="col-xs-12 col-sm-12  col-md-10 col-md-offset-1 col-lg-offset-2 col-lg-8">
@@ -12,52 +12,71 @@
               <div class="col-lg-12">
                 <div class="col-xs-12 col-sm-4">
                   <figure>
-                    <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300">
+                    <%if @user_profile.avatar.present?%>
+                      <img class="img-circle img-responsive" alt="" src="<%=@user_profile.avatar.url%>">
+                    <%else%>
+                      <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300">
+                    <%end%>
+
                   </figure>
                   <div class="row">
                     <div class="col-xs-12 social-btns">
+                      <%if @user_profile.facebook.present?%>
                       <div class="col-xs-3 col-md-2 col-log-1 social-btn-holder">
-                        <a href="#" class="btn btn-social btn-block btn-google">
-                          <i class="fa fa-google"></i>
-                        </a>
-                      </div>
-                      <div class="col-xs-3 col-md-2 col-log-1 social-btn-holder">
-                        <a href="#" class="btn btn-social btn-block btn-facebook">
+                        <a href=<%=@user_profile.facebook%> target="_blank" class="btn btn-social btn-block btn-facebook">
                           <i class="fa fa-facebook"></i>
                         </a>
                       </div>
+                      <%end%>
+                      <%if @user_profile.blog.present?%>
                       <div class="col-xs-3 col-md-2 col-log-1 social-btn-holder">
-                        <a href="#" class="btn btn-social btn-block btn-twitter">
+                        <a href=<%=@user_profile.blog%> target="_blank" class="btn btn-social btn-block btn-facebook">
+                          <i class="fa fa-rss"></i>
+                        </a>
+                      </div>
+                      <%end%>
+                      <%if @user_profile.twitter.present?%>
+                      <div class="col-xs-3 col-md-2 col-log-1 social-btn-holder">
+                        <a href='<%=@user_profile.twitter%>' target="_blank"  class="btn btn-social btn-block btn-twitter">
                           <i class="fa fa-twitter"></i>
                         </a>
                       </div>
+                      <% end %>
+
+                      <%if @user_profile.linkedin.present?%>
                       <div class="col-xs-3 col-md-2 col-log-1 social-btn-holder">
-                        <a href="#" class="btn btn-social btn-block btn-linkedin">
+                        <a href='<%=@user_profile.linkedin%>' target="_blank"  class="btn btn-social btn-block btn-twitter">
                           <i class="fa fa-linkedin"></i>
                         </a>
                       </div>
+                      <% end %>
+                      <%if @user_profile.github.present?%>
                       <div class="col-xs-3 col-md-2 col-log-1 social-btn-holder">
-                        <a href="#" class="btn btn-social btn-block btn-github">
+                        <a href='<%=@user_profile.github%>' target="_blank"  class="btn btn-social btn-block btn-twitter">
                           <i class="fa fa-github"></i>
                         </a>
                       </div>
+                      <% end %>
+                      <%if @user_profile.stackoverflow.present?%>
                       <div class="col-xs-3 col-md-2 col-log-1 social-btn-holder">
-                        <a href="#" class="btn btn-social btn-block btn-stackoverflow">
+                        <a href='<%=@user_profile.stackoverflow%>' target="_blank"  class="btn btn-social btn-block btn-twitter">
                           <i class="fa fa-stack-overflow"></i>
                         </a>
                       </div>
+                      <% end %>
+
                     </div>
 
                   </div>
                 </div>
                 <div class="col-xs-12 col-sm-8">
                   <ul class="list-group">
-                    <li class="list-group-item">John Doe</li>
-                    <li class="list-group-item">Software Engineer</li>
-                    <li class="list-group-item">Google Inc</li>
-                    <li class="list-group-item"><i class="fa fa-phone"></i>000-000-000</li>
+                    <li class="list-group-item"><i class="fa fa-user "></i> <%=@user_profile.name%></li>
+                    <li class="list-group-item"><i class="fa fa-search"></i> <%=@user_profile.position_applied%></li>
+                    <li class="list-group-item"><i class="fa fa-weixin"></i> <%=@user_profile.weixin%></li>
+                    <li class="list-group-item"><i class="fa fa-phone"></i> <%=@user_profile.phone%></li>
                     <li class="list-group-item"><i class="fa fa-envelope"></i>
-                      admin@email.com
+                      <%=@user_profile.email%>
                     </li>
                   </ul>
                 </div>
@@ -68,56 +87,27 @@
           </div>
         </div>
         <div class="bs-callout bs-callout-danger">
-          <h4>Summary</h4>
+          <h4>自我介绍</h4>
           <p>
-            Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. Quis verear mel ne. Munere vituperata vis cu,
-           te pri duis timeam scaevola, nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
+            <%=@user_profile.introduction%>
           </p>
-          <p>
-            Odio recteque expetenda eum ea, cu atqui maiestatis cum. Te eum nibh laoreet, case nostrud nusquam an vis.
-              Clita debitis apeirian et sit, integre iudicabit elaboraret duo ex. Nihil causae adipisci id eos.
-          </p>
+
         </div>
         <div class="bs-callout bs-callout-danger">
-          <h4>Research Interests</h4>
+          <h4>相关技能</h4>
           <p>
-            Software Engineering, Machine Learning, Image Processing,
-            Computer Vision, Artificial Neural Networks, Data Science,
-            Evolutionary Algorithms.
+            <%=@user_profile.research_interests%>
           </p>
         </div>
 
         <div class="bs-callout bs-callout-danger">
-          <h4>Prior Experiences</h4>
-          <ul class="list-group">
-            <a href="#" class="list-group-item inactive-link">
-              <h4 class="list-group-heading">Software Engineer at Twitter</h4>
-              <p class="list-group-item-text">
-                Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. Quis verear mel ne. Munere vituperata vis cu,
-           te pri duis timeam scaevola, nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-              </p>
-            </a>
-            <a href="#" class="list-group-item inactive-link">
-              <h4 class="list-group-heading">Software Engineer at Twitter</h4>
-              <p class="list-group-item-text">
-                Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. Quis verear mel ne. Munere vituperata vis cu,
-           te pri duis timeam scaevola, nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-              </p>
-            </a>
-          </ul>
+          <h4>工作经验</h4>
+          <p><%=@user_profile.prior_experience%></p>
         </div>
 
-        <div class="bs-callout bs-callout-danger">
-          <h4>Key Experiences</h4>
-          <ul class="list-group">
-            <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-            <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-            <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-            <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-          </ul>
-        </div>
 
-        <div class="bs-callout bs-callout-danger">
+
+        <!-- <div class="bs-callout bs-callout-danger">
           <h4>Language and Platform Skills</h4>
           <ul class="list-group">
             <a href="#" class="list-group-item inactive-link">
@@ -177,54 +167,29 @@
 
             </a>
           </ul>
-        </div>
+        </div> -->
 
         <div class="bs-callout bs-callout-danger">
-          <h4>Education</h4>
-          <table class="table table-striped table-responsive ">
-            <thead>
-              <tr><th>Degree</th>
-              <th>Graduation Year</th>
-              <th>CGPA</th>
-            </tr></thead>
-            <tbody>
-              <tr>
-                <td>Masters in Computer Science and Engineering</td>
-                <td>2014</td>
-                <td> 3.50 </td>
-              </tr>
-              <tr>
-                <td>BSc. in Computer Science and Engineering</td>
-                <td>2011</td>
-                <td> 3.25 </td>
-              </tr>
-            </tbody>
-          </table>
+          <h4>教育经历</h4>
+          <p><%=@user_profile.education%></p>
         </div>
-        <h2>应聘者信息</h2>
-        <h3>姓名</h3>
-        <p><%=@resume.user.user_profile.name%></p>
-        <h3>出生年月</h3>
-        <p><%=@resume.user.user_profile.birthday%></p>
-        <h3>简介</h3>
-        <p><%=@resume.user.user_profile.introduction%></p>
-        <h3>联系电话</h3>
-        <p><%=@resume.user.user_profile.phone%></p>
-        <h3>电子邮箱</h3>
-        <p><%=@resume.user.user_profile.email%></p>
-        <h3>个人博客</h3>
-        <p><%=@resume.user.user_profile.blog%></p>
-        <h3>github</h3>
-        <p><%=@resume.user.user_profile.github%></p>
-        <% if @resume.user.user_profile.attachment.present? %>
-          <i class="fa fa-paperclip"></i>
-          <%=link_to("下载附件",@resume.user.user_profile.attachment_url,target:"_blank")%>
-        <% else %>
+        <% if @user_profile.attachment.present?%>
+          <i class="fa fa-paperclip"></i>更多资料
+          <%=link_to "下载附件",@user_profile.attachment_url,target:"_blank"%>
+        <%else%>
           没有附件
-        <% end %>
+        <%end%>
+        <br>
+        <br>
+        <%if @user_profile.user_id == current_user.id%>
+          <%=link_to "编辑简历" ,edit_user_profile_path,:class=>"btn btn-danger"%>
+        <%end%>
+        <%=link_to "返回",:back,:class=>"btn btn-success"%>
+        <br>
       </div>
 
     </div>
+
   </div>
 
 </div>
