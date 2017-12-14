@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   before_action :generate_user_profile!
   def index
-    @jobs=Job.recent.limit(12)
+    @jobs=Job.where(:is_hot=>true).recent.limit(12)
 
   end
   private

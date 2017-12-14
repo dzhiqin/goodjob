@@ -95,11 +95,33 @@
           <h4>教育经历</h4>
           <%=f.text_area :education,:class=>"form-control"%>
         </div>
-        <%=f.submit "更新简历",class:"btn btn-primary"%>
+        <%=f.submit "更新简历",class:"btn btn-primary",id:"profile-update"%>
         <%=link_to "预览简历",user_profile_path,class:"btn btn-success"%>
+
       </div>
       <%end%>
     </div>
   </div>
 
 </div>
+<script type="text/javascript">
+  autosize($('#user_profile_introduction'));
+  autosize($('#user_profile_research_interests'));
+  autosize($('#user_profile_prior_experience'));
+  autosize($('#user_profile_education'));
+  document.getElementById("profile-update").onclick=function(){
+
+    intro_str=document.getElementById("user_profile_introduction").value.replace(/\n|\r\n/g,"<br/>");
+    document.getElementById("user_profile_introduction").value=intro_str;
+
+    research_str=document.getElementById("user_profile_research_interests").value.replace(/\n|\r\n/g,"<br/>");
+    document.getElementById("user_profile_research_interests").value=research_str;
+
+    exp_str=document.getElementById("user_profile_prior_experience").value.replace(/\n|\r\n/g,"<br/>");
+    document.getElementById("user_profile_prior_experience").value=exp_str;
+
+    edu_str=document.getElementById("user_profile_education").value.replace(/\n|\r\n/g,"<br/>");
+    document.getElementById("user_profile_education").value=edu_str;
+
+  }
+</script>

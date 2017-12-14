@@ -20,4 +20,5 @@
 //= require bootstrap-sprockets
 //= require wow.min
 //= require ckeditor/init
+//= require autosize.min
 //= require_tree .

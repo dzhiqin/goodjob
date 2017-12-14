@@ -314,12 +314,14 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 // 以下是职位信息
 .job-mes-panel{
   padding: 10px;
-
+  border-right: 2px solid #00ffff;
 }
 .job-mes-contain{
-  border: 2px solid #00ffff;
+
+
   border-radius: 5px;
   padding: 10px;
+  background-color: #d9d9d9;
 }
 .job-mes-contain hr{
   margin-top: 2px;
@@ -328,12 +330,11 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 .side-mes-panel{
   margin-top: 20px;
   padding: 20px 10px;
-  border: 2px solid #00ffff;
+  // border: 2px solid #00ffff;
   text-align: center;
-  border-radius: 5px;
 }
 .side-mes-panel h1{
-  color: white;
+  // color: #00ffff;
 }
 .side-mes-contain {
 
