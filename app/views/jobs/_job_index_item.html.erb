@@ -11,6 +11,7 @@
         [招聘] [<%=job.work_location%>] [<%=job.company_name%>] <%=job.title%> <%=job.number_of_hiring%>名
       </p>
       <%end%>
+      <small>发布于<%=render_passed_days(job)%>前</small>
     </div>
     <div class="col-md-6">
       <h4 class="media-heading2">薪资： <%= job.wage_lower_bound%> ~ <%=job.wage_upper_bound%></h4>
