@@ -29,9 +29,9 @@
         <h3>联系方式</h3>
         公司地址： <%=@job.company_address%>  <br>
         招聘邮箱：  <%=@job.contact_email%> <br>
-        <%if !current_user.admin?%>
+
           <button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">投递简历</button>
-        <%end%>
+
 
       </div>
 

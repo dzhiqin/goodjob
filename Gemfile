@@ -45,6 +45,8 @@ gem 'mini_magick'
 gem 'rails-i18n'
 gem 'ckeditor'
 gem 'will_paginate'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 group :production do
   gem 'pg'
 end
