@@ -47,6 +47,7 @@ gem 'ckeditor'
 gem 'will_paginate'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+gem 'figaro'
 group :production do
   gem 'pg'
 end
