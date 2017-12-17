@@ -10,5 +10,6 @@ class JobsController < ApplicationController
     @job=Job.find(params[:id])
     @resume=Resume.create!(user_id:current_user.id,job_id:@job.id)
     redirect_to job_path(@job)
+    flash[:notice]="您已成功投递简历"
   end
 end

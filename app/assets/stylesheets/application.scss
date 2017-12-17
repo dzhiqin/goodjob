@@ -26,7 +26,13 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
+//以下是flash部分
+.flash-container{
+  position: absolute;
+  opacity: 0.8;
+  width: 100%;
+}
+//以下是导航栏部分
 .navbar {
   margin-bottom: 0px;
   color: white;
