@@ -35,7 +35,7 @@ gem 'turbolinks','~>5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
-gem 'devise'
+gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'carrierwave'
